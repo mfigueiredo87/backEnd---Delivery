@@ -2,7 +2,10 @@
 import os 
 
 # criar uma lista global
-restaurantes = ['Pizza','Art Doce','Vicky','Millenium']
+restaurantes = [{'nome':'Art Doce', 'categoria':'Huilana', 'ativo':False},
+                {'nome':'Millenium','categoria':'africana','ativo':False},
+                {'nome':'Doces da Vicky','categoria':'Doces e Salgados','ativo':True}
+                ]
 
 # funcao que lista o nome do programa
 def exibir_nome_do_programa():
@@ -51,7 +54,10 @@ def listar_restaurantes():
     exibir_subtitulos('Listar restaurantes')
     # estrutura de repeticao para exibir os restaurantes na tela
     for restaurante in restaurantes:
-        print(f'.{restaurante}')
+        nome_restaurante = restaurante['nome']
+        categoria = restaurante['categoria']
+        estado = restaurante['ativo']
+        print(f'- {nome_restaurante} | {categoria} | {estado}')
     voltar_menu_principal()
     
     # funcao para esoclher opcoes
